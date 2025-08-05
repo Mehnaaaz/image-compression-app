@@ -72,26 +72,3 @@ def compress_image(image_path, quality_percentage, output_path):
     except Exception as e:
         print(f"Error compressing image: {str(e)}")
         raise e
-
-def compress_image_alternative(image_path, quality_percentage, output_path):
-    """
-    Alternative compression method using JPEG quality only
-    (Simpler approach that might work better for some use cases)
-    """
-    try:
-        # Load and convert to RGB
-        img = Image.open(image_path)
-        if img.mode != 'RGB':
-            img = img.convert('RGB')
-        
-        # Calculate JPEG quality from percentage
-        jpeg_quality = max(10, min(95, int(quality_percentage)))
-        
-        # Save with JPEG compression
-        img.save(output_path, 'JPEG', quality=jpeg_quality, optimize=True)
-        
-        print(f"Image compressed with JPEG quality {jpeg_quality}%")
-        
-    except Exception as e:
-        print(f"Error in alternative compression: {str(e)}")
-        raise e
