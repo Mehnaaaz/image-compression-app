@@ -1,0 +1,8 @@
+Flask==2.3.3
+numpy==1.26.4
+Pillow==10.4.0
+scikit-learn==1.5.2
+matplotlib==3.9.2
+nbformat==5.10.4
+nbconvert==7.16.4
+axios==0.27.2
